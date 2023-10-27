@@ -39,10 +39,10 @@ class SuporteTecnico {
   - resolucao: string
 }
 
-Medicamento "1" -- "0..*" Estoque : has
-Medicamento "0..*" -- "0..*" Consulta : has
-Paciente "1" -- "0..*" Consulta : has
-ProfissionalSaude "1" -- "0..*" Consulta : has
-ProfissionalSaude "1" -- "0..*" SuporteTecnico : has
+Medicamento "1" -- "0..*" Estoque
+Medicamento "0..*" -- "0..*" Consulta
+Paciente "1" -- "0..*" Consulta
+ProfissionalSaude "1" -- "0..*" Consulta
+ProfissionalSaude "1" -- "0..*" SuporteTecnico
 
 @enduml
