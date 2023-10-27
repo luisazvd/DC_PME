@@ -1,0 +1,48 @@
+@startuml
+
+!theme toy
+
+class Medicamento {
+  - idMedicamento: int
+  - nome: string
+  - dosagem: string
+}
+
+class Estoque {
+  - idEstoque: int
+  - dataEntrada: date
+  - dataSaida: date
+  - estoqueTotal: int
+}
+
+class Consulta {
+  - idConsulta: int
+  - dataConsulta: date
+  - descricao: string
+}
+
+class Paciente {
+  - idPaciente: int
+  - nome: string
+  - idade: int
+}
+
+class ProfissionalSaude {
+  - idProfissional: int
+  - nome: string
+  - especialidade: string
+}
+
+class SuporteTecnico {
+  - idSuporte: int
+  - tipoSuporte: string
+  - resolucao: string
+}
+
+Medicamento "1" -- "0..*" Estoque : has
+Medicamento "0..*" -- "0..*" Consulta : has
+Paciente "1" -- "0..*" Consulta : has
+ProfissionalSaude "1" -- "0..*" Consulta : has
+ProfissionalSaude "1" -- "0..*" SuporteTecnico : has
+
+@enduml
